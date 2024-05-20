@@ -221,7 +221,15 @@ class Student:
         showAll_btn=Button(Search_frame,text="Show All",width=13,font=("times new roman",13,"bold"),bg="blue",fg="white")
         showAll_btn.grid(row=0,column=4,padx=4)
 
+        #Table Frame
+        table_frame=Frame(Right_frame,bd=2,bg="white",relief=RIDGE)
+        table_frame.place(x=5,y=210,width=710,height=250)
 
+        #scroll bar
+        scroll_x=ttk.Scrollbar(table_frame,orient=HORIZONTAL)
+        scroll_y=ttk.Scrollbar(table_frame,orient=VERTICAL)
+        
+        self.student_table=ttk.Treeview(table_frame,column=('Department','Course','Year','Sem','ID','NAME','DIV','ROLL','GENDER','DOB','EMAIL','GENDER','PHONE','ADDRESS','TEACHER','PHOTO'),xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
    
 if __name__=="__main__" :
     root=Tk()
